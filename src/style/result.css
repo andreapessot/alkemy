@@ -1,0 +1,11 @@
+results img{
+    border-radius: 8px;
+    width: 315px;
+    height: 322px;
+}
+
+results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

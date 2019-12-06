@@ -3,6 +3,7 @@ import '../App.css';
 import axios from 'axios';
 import Card from './Card';
 import CardButton from './CardButton';
+import '../style/titolo.css'
 
 
 
@@ -39,11 +40,16 @@ class CardContainer extends React.Component {
     })
 
     return (
+      <div>
+      <div className="titolo">
+      <h2>{question}</h2>
+      </div>
       <div className="step-cards-container">
-        <h2>{question}</h2>
+        
 
         {cards}
 
+      </div>
       </div>
     )
   }

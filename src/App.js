@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./assets/img/logo.svg";
+import logo from "./assets/img/alkemy.png";
 import "./App.css";
 import axios from "axios";
 import BreadCrumb from "./components/Breadcrumb";
@@ -7,101 +7,148 @@ import CardContainer from "./components/CardContainer";
 import Button from "./components/Button";
 import Results from "./components/Results";
 import wizard from './lib/wizard'
+import './style/zizzi.css'
 
 const WIZARD = {
   steps: [
     {
-      question: "Che tipo di attività devi svolgere?",
-      category: "Attività",
+      question: 'Ritieni che il lavoro che stai svolgendo ti stia facendo crescere professionalmente?',
+      category: '1',
+      answers: [
+          {
+              id: 100,
+              image: 'faccinaTriste.png'
+          },
+          {
+              id: 101,
+              image: 'faccinaMeh.png'
+          },
+          {
+            id: 101,
+            image: 'faccinaFelice.png'
+        }
+      ]
+  },
+  {
+      question: 'La direzione aziendale è chiara nell assegnazione dei compiti?',
+      category: '2',
       answers: [
         {
           id: 100,
-          title: "Tenere in ordine il mio giardino",
-          description: "Falciatura ordinaria del prato, rifinitura aiuole",
-          image: "attivita_1.jpg"
-        },
-        {
+          image: 'faccinaTriste.png'
+      },
+      {
           id: 101,
-          title: "Pulire e rinnovare il giardino",
-          description:
-            "Presenza di arbusti, erbe alte e spesse, piante infestanti da rimuovere",
-          image: "attivita_2.jpg"
-        }
+          image: 'faccinaMeh.png'
+      },
+      {
+        id: 101,
+        image: 'faccinaFelice.png'
+    }
       ]
-    },
-    {
-      question: "Sono presenti piante o ostacoli?",
-      category: "Ostacoli",
+  },
+  {
+      question: 'Quanto sono efficenti i Team Meetings?',
+      category: '3',
       answers: [
         {
-          id: 102,
-          title: "Sono presenti aiuole e ostacoli di piccole dimensioni",
-          description: null,
-          image: "ostacoli_1.jpg"
-        },
+          id: 100,
+          image: 'faccinaTriste.png'
+      },
+      {
+          id: 101,
+          image: 'faccinaMeh.png'
+      },
+      {
+        id: 102,
+        image: 'faccinaFelice.png'
+    }
+      ]
+  },
+  {
+      question: 'Sei soddisfatto dei benefits che l azienda riconosce ai suoi dipendenti?',
+      category: '4',
+      answers: [
         {
           id: 103,
-          title:
-            "Sono presenti arbusti, alberi e ostacoli di grandi dimensioni",
-          description: null,
-          image: "ostacoli_2.jpg"
-        },
-        {
+          image: 'faccinaTriste.png'
+      },
+      {
           id: 104,
-          title: "No, non son presenti piante e ostacoli",
-          description: null,
-          image: "ostacoli_3.jpg"
-        }
-      ]
-    },
-    {
-      question: "Ci sono pendenze o affossamenti?",
-      category: "Pendenza",
-      answers: [
-        {
-          id: 105,
-          title: "Sì, il mio terreno è pendente o presenta degli affossamenti",
-          description: null,
-          image: "pendenza_1.jpg"
-        },
-        {
-          id: 106,
-          title: "No, ho un terreno piano",
-          description: null,
-          image: "ostacoli_2.jpg"
-        }
-      ]
-    },
-    {
-      question: "Che dimensioni ha il tuo terreno?",
-      category: "Dimensioni",
-      answers: [
-        {
-          id: 107,
-          title: "Fino a 100 m2",
-          description: null,
-          image: null
-        },
-        {
-          id: 108,
-          title: "Da 100 a 500 m2",
-          description: null,
-          image: null
-        },
-        {
-          id: 109,
-          title: "Da 500 a 1000 m2",
-          description: null,
-          image: null
-        },
-        {
-          id: 110,
-          title: "Da 1000 a 2000 m2",
-          description: null,
-          image: null
-        }
-      ]
+          image: 'faccinaMeh.png'
+      },
+      {
+        id: 105,
+        image: 'faccinaFelice.png'
     }
+      ]
+  },
+  {
+      question: 'Quanto consiglieresti la nostra azienda ad amici e colleghi?',
+      category: '5',
+      answers: [
+          {
+              id: 107,
+              title: '1',
+              description: null,
+              image: null
+          },
+          {
+              id: 108,
+              title: '2',
+              description: null,
+              image: null
+          },
+          {
+              id: 109,
+              title: '3',
+              description: null,
+              image: null
+          },
+          {
+              id: 110,
+              title: '4',
+              description: null,
+              image: null
+          },
+          {
+              id: 111,
+              title: '5',
+              description: null,
+              image: null
+          },
+          {
+              id: 112,
+              title: '6',
+              description: null,
+              image: null
+          },
+          {
+              id: 113,
+              title: '7',
+              description: null,
+              image: null
+          },
+          {
+              id: 114,
+              title: '8',
+              description: null,
+              image: null
+          },
+          {
+              id: 115,
+              title: '9',
+              description: null,
+              image: null
+          },
+          {
+              id: 116,
+              title: '10',
+              description: null,
+              image: null
+          }
+      ]
+  }
   ],
   tree: {
     children: [
@@ -589,13 +636,15 @@ class App extends React.Component {
           <br />
 
           {/* BUTTON  */}
+          <div className="zizzi">
           {button}
+          </div>
         
               
           {/*  RESULTS */}
           {resultsComponent}
 
-          <select>{options}</select>
+          {/* <select>{options}</select> */}
         </div>
       </div>
     );

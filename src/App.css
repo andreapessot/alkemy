@@ -35,7 +35,10 @@
 }
 
 .App-header {
-  border-bottom: 3px solid #66cc33;
+  border-bottom: 3px solid orange;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .App-container {
@@ -46,8 +49,9 @@
 
 .step-cards-container {
   display: flex;
-  flex-wrap: nowrap;
-  overflow: auto;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: auto;
 }
 
 .step-card {

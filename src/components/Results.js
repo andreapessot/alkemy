@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import img from '../../src/assets/img/attivita_1.jpg'
+import '../style/result.css'
 
 class Results extends React.Component {
     render() {
@@ -38,7 +39,7 @@ class Results extends React.Component {
 
 
         )
-       // console.log(treeResult);
+       console.log(treeResult);
         return (
             <div>
                 {renderMap}
